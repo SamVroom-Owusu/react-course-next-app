@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState } from 'react'; // react-dom useFormState has been renamed to useActionState
+import { useFormState } from 'react-dom'; // react-dom useFormState has been renamed to useActionState from react
 
 import ImagePicker from '@/components/meals/image-picker';
 import classes from './page.module.css';
@@ -8,8 +8,7 @@ import { shareMeal } from '@/lib/actions';
 import MealsFormSubmit from '@/components/meals/meals-form-submit';
 
 export default function ShareMealPage() {
-  // TODO: fix formAction validation trim not working as expected
-  const [state, formAction] = useActionState(shareMeal, { message: null });
+  const [state, formAction] = useFormState(shareMeal, { message: null });
 
   return (
     <>
